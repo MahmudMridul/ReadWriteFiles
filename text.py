@@ -1,4 +1,4 @@
-text_file = 'text_file.txt'
+text_file = 'file.txt'
 reading_mode = 'r'
 writing_mode = 'w'
 appending_mode = 'a'

@@ -25,17 +25,25 @@ def show_partial(filename, sheetname, startrow, endrow, startcol, endcol):
     else:
         print("Invalid row/column number")
 
-#iterate through each row
+def get_sheets(filename):
+    file = pd.ExcelFile(filename)
+    print(file.sheet_names)
 
-#print(employee_info.iloc[0:5]) # getting row 0 to 4
-#print(employee_info.iloc[0:5, 0:1]) #gettging row 0 to 4 and column 0
 
-#print(len(employee_info.index)) #get number of rows
-#print(file.sheet_names) # get sheet names as list
+def writeto_cell(filename, sheetname, row, col, data):
+    file = pd.ExcelFile(filename)
+    sheet = pd.read_excel(file, sheetname)
+    numof_cols = sheet.shape[1]
+    numof_rows = sheet.shape[0]
 
-#print(type(employee_info.iloc[0, 0])) #get cell value
+    if(row >=0 and row < numof_rows and col >=0 and col <= numof_cols):
+        sheet.iloc[row, col] = data
+    else:
+        print("Invalid row/column number")
+
 
 show_partial(file_name, sheet_name, 1, 5, 1, 1)
+get_sheets(file_name)
 
 
 

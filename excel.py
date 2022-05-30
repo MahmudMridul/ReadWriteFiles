@@ -38,12 +38,15 @@ def writeto_cell(filename, sheetname, row, col, data):
 
     if(row >=0 and row < numof_rows and col >=0 and col <= numof_cols):
         sheet.iloc[row, col] = data
+        print(sheet.iloc[row, col])
     else:
         print("Invalid row/column number")
 
 
 show_partial(file_name, sheet_name, 1, 5, 1, 1)
 get_sheets(file_name)
+writeto_cell(file_name, sheet_name, 0, 1, 'Momo')
+iterate_sheet(file_name, sheet_name, 5)
 
 
 
